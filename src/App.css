@@ -6,6 +6,8 @@
   height: 40vmin;
   pointer-events: none;
   font-weight: bold;
+  color: rgb(221, 221, 221);
+  
 }
 
 @media (prefers-reduced-motion: no-preference) {
