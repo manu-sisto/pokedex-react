@@ -35,11 +35,12 @@ function App() {
       <Tarjeta pokemon={PokemonSeleccionado} />
 
       <ListaPokemones
-        pokemones={data.map((pok) => pok.name)}
+        pokemones={data.map(pok => (pok))}
+
         siguiente={next}
         anterior={prev}
         onPokemonClick={(pokemon) => {
-          datosPokemon(`https://pokeapi.co/api/v2/pokemon/${pokemon}`).then(
+          datosPokemon(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`).then(
             (obj) => {
               setPokemonSeleccionado(obj);
             }

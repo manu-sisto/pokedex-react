@@ -8,13 +8,13 @@ const ListaPokemones = (props) => {
         {props.pokemones.map((pokemon) => {
           return (
             <li
-              key={pokemon}
+              key= {pokemon.name}
+              
               onClick={() => {
                 props.onPokemonClick(pokemon);
               }}
             >
-              1
-              {pokemon}
+              {pokemon.url.split("/")[6] + ". " + pokemon.name}
             </li>
           );
         })}
@@ -35,9 +35,6 @@ const ListaPokemones = (props) => {
       >
         Siguiente 
       </button>
-
-      <p>{props.siguiente}</p>
-      <p>{props.prev}</p>
     </div>
   );
 };
