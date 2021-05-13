@@ -24,7 +24,6 @@ function App() {
     return pokemonService.traerPokemon(url);
   }
 
-  console.log();
 
   if (!data) return <h1>loading...</h1>;
 
