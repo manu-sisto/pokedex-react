@@ -1,19 +1,23 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-  font-weight: bold;
-  color: rgb(221, 221, 221);
-  
+  background: linear-gradient(to right bottom, steelblue, white);
+  font-family: "Play", sans-serif;
+  font-weight: bold 700;
+  min-width: 100%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.titulo {
+  font-size: 20px;
+  text-align: center;
+}
+
+.pokebola {
+  width: 30px;
 }
 
 .App-header {
@@ -39,3 +43,134 @@
     transform: rotate(360deg);
   }
 }
+
+.loading {
+  align-content: center;
+  margin-left: 50%;
+}
+
+button {
+  border: 2px solid black;
+  background: linear-gradient(to bottom, red 50%, white 50%);
+  margin: 10px;
+  width: 100px;
+  padding: 8px;
+  border-radius: 6px;
+  font-family: "Play", sans-serif;
+  font-weight: bold;
+}
+
+.anterior {
+  margin-left: 5%;
+}
+
+.container {
+  border: 2px solid black;
+  width: 600px;
+  flex-wrap: wrap;
+}
+
+.lista {
+  justify-items: right;
+  align-self: center;
+  text-align: left;
+  border-right: 3px solid rgb(107, 107, 107);
+  border-left: 3px solid rgb(212, 212, 212);
+  border-top: 3px solid rgb(212, 212, 212);
+  border-bottom: 3px solid rgb(107, 107, 107);
+  background: linear-gradient(to right bottom, grey, rgb(209, 209, 209));
+  padding-left: 8px;
+  font-weight: bold;
+  width: 15%;
+  min-width: 200px;
+  margin-top: 20px;
+  margin-left: 5%;
+}
+
+.tarjeta {
+  max-width: 300px;
+  min-width: 250px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 50px;
+  border: 1px solid rgb(100, 100, 100);
+  border-radius: 8px;
+  background: linear-gradient(to bottom, red 50%, white 50%);
+  float: right;
+  font-family: "Play", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+}
+
+.nombreTarjeta {
+  font-size: larger;
+  margin-top: 5%;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 2px 2px rgb(49, 49, 49);
+}
+
+.imagenPokemon {
+  border: 2px solid rgb(39, 39, 39);
+  border-radius: 8px;
+  display: block;
+  margin: 5px auto 5px auto;
+  min-height: 120px;
+  min-width: 120px;
+  margin-top: 20px;
+  background: radial-gradient(rgb(253, 253, 8), rgb(148, 148, 31));
+}
+
+
+
+#pokebola{
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  margin-left: 4px;
+  margin-top: 4px;
+}
+.semi-circulo1 {
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  border-radius: 150px 150px 0 0;
+  background: radial-gradient(at bottom,  rgb(255, 2, 2)30%,  rgb(117, 0, 0)80%);
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.semi-circulo2 {
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  border-radius: 0 0 150px 150px ;
+  background: radial-gradient(at top,  rgb(241, 241, 241)30%,  rgb(155, 155, 155)80%);
+  border: 2px solid black;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin-top: 50%;
+}
+.circulo {
+  width: 25%;
+  height: 25%;
+  border-radius: 50% 50%;
+  background: radial-gradient( rgb(241, 241, 241)40%,  rgb(117, 117, 117));
+  border: 2px solid black;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+
+
