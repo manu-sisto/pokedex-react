@@ -2,7 +2,7 @@ import React from "react";
 
 const ListaPokemones = (props) => {
   return (
-    <div className="container">
+    <div>
       <ul className="lista">
       <h3>POKEMONES:</h3>
         {props.pokemones.map((pokemon) => {
@@ -13,7 +13,7 @@ const ListaPokemones = (props) => {
                 props.onPokemonClick(pokemon);
               }}
             >
-              {pokemon.url.split("/")[6] + ". " + pokemon.name}
+              {pokemon.url.split("/")[6] + ". " + pokemon.name} 
             </li>
           );
         })}
@@ -24,7 +24,7 @@ const ListaPokemones = (props) => {
           props.onAnteriorClick(props.anterior);
         }}
       >
-        Anterior
+        &#9664; Ant. 20 
       </button>
 
       <button
@@ -32,7 +32,7 @@ const ListaPokemones = (props) => {
           props.onSiguienteClick(props.siguiente);
         }}
       >
-        Siguiente
+        20 Sig. &#9658;
       </button>
     </div>
   );

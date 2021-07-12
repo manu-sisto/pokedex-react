@@ -11,7 +11,9 @@ function App() {
   const [data, setData] = useState();
   const [prev, setPrev] = useState();
   const [next, setNext] = useState();
-  const [PokemonSeleccionado, setPokemonSeleccionado] = useState();
+  const [pokemonSeleccionado, setPokemonSeleccionado] = useState();
+  const [siguientePokemon, setSiguientePokemon] = useState();
+  const [anteriorPokemon, setAnteriorPokemon] = useState();
 
   useEffect(() => {
     pokemonService.traerPagina().then(function (response) {
@@ -27,8 +29,8 @@ function App() {
 
   if (!data)
     return (
-      <div>
-        <Pokebola/>
+      <div className="container">
+        <Pokebola />
         <h1 className="loading">loading...</h1>;
       </div>
     );
@@ -37,18 +39,61 @@ function App() {
     <main className="App">
       <div className="container">
         <h1 className="titulo">POKEDEX</h1>
-        <Tarjeta pokemon={PokemonSeleccionado} />
+        <Tarjeta
+          pokemon={pokemonSeleccionado}
+          siguientePokemon={siguientePokemon}
+          anteriorPokemon={anteriorPokemon}
+          onSiguienteClick={(pokemon) => {
+            datosPokemon(pokemon).then((obj) => {
+              setPokemonSeleccionado(obj);
+              setAnteriorPokemon(
+                `https://pokeapi.co/api/v2/pokemon/${
+                  Number(pokemon.split("/")[6]) - 1
+                }/`
+              );
+              setSiguientePokemon(
+                `https://pokeapi.co/api/v2/pokemon/${
+                  Number(pokemon.split("/")[6]) + 1
+                }/`
+              );
+            });
+          }}
+          onAnteriorClick={(pokemon) => {
+            datosPokemon(pokemon).then((obj) => {
+              setPokemonSeleccionado(obj);
+              setAnteriorPokemon(
+                `https://pokeapi.co/api/v2/pokemon/${
+                  Number(pokemon.split("/")[6]) - 1
+                }/`
+              );
+              setSiguientePokemon(
+                `https://pokeapi.co/api/v2/pokemon/${
+                  Number(pokemon.split("/")[6]) + 1
+                }/`
+              );
+            });
+          }}
+        />
 
         <ListaPokemones
           pokemones={data.map((pok) => pok)}
           siguiente={next}
           anterior={prev}
           onPokemonClick={(pokemon) => {
-            datosPokemon(
-              `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
-            ).then((obj) => {
+            datosPokemon(pokemon.url).then((obj) => {
               setPokemonSeleccionado(obj);
+              setSiguientePokemon(
+                `https://pokeapi.co/api/v2/pokemon/${
+                  Number(pokemon.url.split("/")[6]) + 1
+                }/`
+              );
+              setAnteriorPokemon(
+                `https://pokeapi.co/api/v2/pokemon/${
+                  Number(pokemon.url.split("/")[6]) - 1
+                }/`
+              );
             });
+            console.log(pokemon);
           }}
           onAnteriorClick={(A) => {
             pokemonService.traerPagina(A).then(function (response) {
