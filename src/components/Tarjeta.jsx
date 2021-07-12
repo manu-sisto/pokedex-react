@@ -18,8 +18,8 @@ const Tarjeta = (props) => {
         alt="imagen del pokemon"
       />
       <div>ID: {objeto.id}</div>
-      <div>ALTURA: {altura} Cm.</div>
-      <div>PESO: {peso} Kg.</div>
+      <div>ALTURA: {peso} Cm.</div>
+      <div>PESO: {altura} Kg.</div>
 
       <br></br>
     </div>
